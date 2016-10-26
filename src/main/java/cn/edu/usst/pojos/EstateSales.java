@@ -1,13 +1,11 @@
 package cn.edu.usst.pojos;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Wan on 2016/9/8 0008.
  */
-//spring使用的是jackson：参考注解：JsonProperty
 @Table(name = "estate_sales")
 @Entity
 public class EstateSales {
@@ -34,13 +32,6 @@ public class EstateSales {
     private Date insertTime;
     @Column(name = "update_time")
     private Date updateTime;
-
-
-    public EstateSales(String area, String saleArea, String saleNum) {
-        this.area = area;
-        this.saleArea = saleArea;
-        this.saleNum = saleNum;
-    }
 
     public Long getId() {
         return id;

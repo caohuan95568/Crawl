@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - spider@115.159.108.201" uuid="5429ba7c-cd27-4c06-bcf8-bcbf6641d7eb">
+    <database-info product="MySQL" version="5.5.50-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="spider"/>
+      <table id="2" parent="1" name="estate_sales"/>
+      <column id="3" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="4" parent="2" name="area">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="5" parent="2" name="time_unit">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="6" parent="2" name="date_time">
+        <data-type>date</data-type>
+      </column>
+      <column id="7" parent="2" name="sale_area">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="8" parent="2" name="sale_num">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="9" parent="2" name="price">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="10" parent="2" name="year_on_year">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="11" parent="2" name="month_on_month">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="12" parent="2" name="insert_time">
+        <data-type>date</data-type>
+      </column>
+      <column id="13" parent="2" name="update_time">
+        <data-type>date</data-type>
+      </column>
+      <key id="14" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
