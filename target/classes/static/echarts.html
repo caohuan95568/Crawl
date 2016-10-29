@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+	<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px"></div>
+	<!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+		var area=[];
+		var price=[];
+		$(function(){
+			$.ajax({
+				type:"post",
+				async:false,
+				url:"getPicPrice",
+				dataType:"json",
+				success:function(result){
+					if(result){
+						for(var i =0;i<result.length;i++){
+							area.push(result[i].area);
+							price.push(result[i].price);
+						}
+					}
+				}
+			})
+		})
+
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar'
+            ],
+            function (ec) {
+                var myChart = ec.init(document.getElementById('main')); 
+                var option = {
+					title:{
+						text:'百城房价指数',
+						subtext:'数据来源于搜房网'
+					},
+                    tooltip: {
+                        show: true
+                    },
+                    legend: {
+                        data:['房价']
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+							data :  area
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : [
+                        {
+                            "name":"房价",
+                            "type":"bar",
+                            "data": price
+                        }
+                    ]
+                };
+                myChart.setOption(option); 
+            }
+        );
+    </script>
+</body>
